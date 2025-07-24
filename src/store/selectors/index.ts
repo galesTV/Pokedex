@@ -4,12 +4,12 @@ import { selector } from "recoil";
 import { requester } from "../../api/requester";
 
 // RECOIL: ATOMS
-import { atomPokemon } from "../atoms";
+import { atomPokemonSearch } from "../atoms";
 
 export const selectorGetPokemon = selector({
     key: "selectorGetPokemon",
     get: async ({ get }) => {
-        const pokemon = get(atomPokemon);
+        const pokemon = get(atomPokemonSearch);
 
         if(pokemon){
             const { data } = await requester({
